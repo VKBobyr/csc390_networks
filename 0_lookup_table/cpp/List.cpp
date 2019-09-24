@@ -38,7 +38,7 @@ void List::last() {
 
 void List::makecurrent(int position) {
     if (position >= count) {
-        throw std::out_of_range((boost::format("Index out of bounds. List size: %1%. Requested %2%") % count % position).str());
+        throw std::out_of_range("Index out of bound.");
     }
 
     bool forward = position > currentPos;

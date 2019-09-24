@@ -1,0 +1,6 @@
+*.dmg
+*.zip
+compiled
+.vscode
+*.out
+imports

@@ -1,8 +1,0 @@
-CC = g++
-CPPFLAGS = -g -I.
-LDFLAGS = -lcurses -lmm
-main: main.o
-main.o: main.cpp main.h
-clean:
-	rm main
-	rm *.o

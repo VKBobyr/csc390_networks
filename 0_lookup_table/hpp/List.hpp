@@ -3,7 +3,6 @@
 
 #include "Item.hpp"
 #include "Node.hpp"
-#include "boost/format.hpp"
 #include <iostream>
 
 class List // Keeps track of the items whose keys end up at the same table position
