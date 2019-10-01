@@ -56,7 +56,7 @@ class Communicator {
 
     void sendInt(int inty) {
         char* cInty = intToChar(inty);
-        ::send(socket, cInty, sizeof(int), 0);
+        // ::send(socket, cInty, sizeof(int), 0);
         delete[] cInty;
     }
 
@@ -165,7 +165,7 @@ class Communicator {
     static char* intToChar(int& a) {
         char* out = new char[sizeof(int)];
         memcpy(out, &a, sizeof(int));
-        delete[] out;
+        // delete[] out;
         return out;
     }
 
