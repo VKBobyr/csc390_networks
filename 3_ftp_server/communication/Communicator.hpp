@@ -44,7 +44,7 @@ class Communicator {
             memcpy(&secret, &target[i * 4], sizeof(int));
             decrypted[i] = (char)Algs::fastExp(secret, rsa_our_d, rsa_our_p * rsa_our_q);
         }
-        delete target;
+        delete[] target;
         return pair<char*, int>{decrypted, outSize};
     }
 
@@ -57,7 +57,7 @@ class Communicator {
     void sendInt(int inty) {
         char* cInty = intToChar(inty);
         ::send(socket, cInty, sizeof(int), 0);
-        delete cInty;
+        delete[] cInty;
     }
 
     void sendChar(char* data, int size) {
@@ -93,7 +93,7 @@ class Communicator {
     string receiveString() {
         auto cString = receiveChar();
         auto sString = string(cString.first, cString.first + cString.second);
-        delete cString.first;
+        delete[] cString.first;
         return sString;
     }
 
