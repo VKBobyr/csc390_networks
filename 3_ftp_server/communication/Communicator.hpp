@@ -165,6 +165,7 @@ class Communicator {
     static char* intToChar(int& a) {
         char* out = new char[sizeof(int)];
         memcpy(out, &a, sizeof(int));
+        delete[] out;
         return out;
     }
 
